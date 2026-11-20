@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ydun for Football</title>
+<meta name="description" content="Ydun for football: preventive health and precision nutrition for football clubs. From nutritional prescription to nutritional feedback.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Ydun home"><img src="assets/images/logo.svg" alt="Ydun logo"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#journey">How it works</a></li>
+      <li><a href="#loop">Feedback loop</a></li>
+      <li><a href="#fuel">Matchweek fuelling</a></li>
+      <li><a href="#baseline">Player baseline</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a class="login" href="https://www.ydun.com/login" target="_blank" rel="noopener"><span>Log in</span><img src="assets/images/user.svg" alt=""></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Ydun for football · Precision nutrition</div>
+        <h1>From nutritional <span class="u">prescription</span> to nutritional <span class="u">feedback</span></h1>
+        <p class="lead">What the staff plan, what the player eats, and what <u>actually happens</u>. Ydun gives football clubs a preventive health and nutrition programme built around each player's own baseline.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#loop">See the feedback loop →</a>
+          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+        </div>
+      </div>
+      <div class="pitch" aria-hidden="true">
+        <svg class="lines" viewBox="0 0 400 432" preserveAspectRatio="none" fill="none" stroke="rgba(202,221,200,.18)" stroke-width="1.5">
+          <rect x="20" y="20" width="360" height="392" rx="4"/>
+          <line x1="20" y1="216" x2="380" y2="216"/>
+          <circle cx="200" cy="216" r="52"/>
+          <rect x="110" y="20" width="180" height="70"/><rect x="155" y="20" width="90" height="28"/>
+          <rect x="110" y="342" width="180" height="70"/><rect x="155" y="384" width="90" height="28"/>
+        </svg>
+        <img class="hero-illu" src="assets/images/section-four-illustration.svg" alt="">
+        <div class="chip c1"><b>Measure</b>Blood, microbiome, load</div>
+        <div class="chip c2"><b>Intervene</b>Fuelling &amp; recovery</div>
+        <div class="chip c3"><b>Learn</b>Read against own baseline</div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal"><h3>Individual baseline</h3><p>Understand each player over time, not against a squad average.</p></div>
+      <div class="pillar reveal"><h3>Measurable interventions</h3><p>Track each change through to biological and functional response.</p></div>
+      <div class="pillar reveal"><h3>Decision support</h3><p>A concise longitudinal view for the Head of Nutrition and performance staff.</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>The road to <em>healthier, more available</em> players</h2>
+      <p class="lead">Ydun is an all-in-one preventive programme delivered at the training ground, around the training schedule. Four steps, then the cycle repeats.</p>
+    </div>
+    <div class="journey reveal" id="journeyBox">
+      <div class="steps" role="tablist" id="steps"></div>
+      <div class="stage" id="stage" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOP -->
+<section id="loop">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">The feedback loop</div>
+      <h2>Measure → understand → intervene → <em>learn</em></h2>
+      <p class="lead">Phase 1 builds each player's baseline. Phase 2 closes the loop once the data allows it. Click any step, or play the loop.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="phase-row">
+        <div class="phase p1">Phase 1 — Build the baseline</div>
+        <div class="phase p2">Phase 2 — Once the data allows it</div>
+      </div>
+      <div class="loop" id="loopNodes"></div>
+      <div class="return" aria-hidden="true"><div class="track"></div><div class="arrowhead"></div><div class="label">Adjust the strategy — then measure again</div></div>
+
+      <div class="loop-ctl">
+        <div class="cycle" id="cycle"></div>
+        <button class="btn btn-ghost" id="playLoop">▶ Play the loop</button>
+      </div>
+      <div class="detail fade-in" id="loopDetail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANNER -->
+<section id="fuel">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Interactive · Matchweek fuelling</div>
+      <h2>Fuel for the work <em>required</em></h2>
+      <p class="lead">Energy needs in football change day by day. Pick a schedule, set body mass and tap a day to see how the nutritional strategy shifts across the matchweek.</p>
+    </div>
+
+    <div class="planner reveal">
+      <div class="ctl-row">
+        <div class="ctl"><label>Fixture schedule</label>
+          <div class="seg" id="sched"><button class="on" data-s="single">1 match / week</button><button data-s="double">2 matches / week</button></div>
+        </div>
+        <div class="ctl"><label for="mass">Player body mass</label>
+          <div class="range"><input type="range" id="mass" min="55" max="95" value="75" aria-describedby="massOut"><output id="massOut">75 kg</output></div>
+        </div>
+      </div>
+      <div class="week" id="week"></div>
+      <div class="fuel-out" id="fuelOut"></div>
+      <p class="src">Ranges are general, population-level guidance for elite football (e.g. the UEFA expert group statement on nutrition in elite football, 2021). They are a starting point, not a prescription — in Ydun, each player's plan is set by the club's nutrition staff and adjusted against that player's own response.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BASELINE -->
+<section id="baseline">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Interactive · Individual baseline</div>
+      <h2>Read each player against <em>their own</em> normal</h2>
+      <p class="lead">A value that looks fine next to the squad average can still be unusual for that player. Switch the reference and see which weeks get flagged.</p>
+    </div>
+    <div class="base reveal">
+      <div class="chart-card" style="position:relative">
+        <div class="chart-top">
+          <div><span class="demo-flag">Illustrative data</span> <span style="color:var(--muted);font-size:14px;margin-left:6px">Player 07 · 20 weeks</span></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <select id="metric" aria-label="Marker">
+              <option value="gi">GI symptom score</option>
+              <option value="sleep">Sleep quality</option>
+              <option value="ck">Creatine kinase (CK)</option>
+            </select>
+            <div class="seg" id="ref"><button class="on" data-r="own">Own baseline</button><button data-r="squad">Squad average</button></div>
+          </div>
+        </div>
+        <svg id="chart" viewBox="0 0 720 320" role="img" aria-label="Line chart of the selected marker over 20 weeks with a reference band"></svg>
+        <div class="legend" id="legend"></div>
+        <div class="tt" id="tt"></div>
+      </div>
+      <aside class="insight" id="insight"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="value">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Why Ydun</div>
+      <h2>Good for the player. <em>Good for the club.</em></h2>
+    </div>
+    <div class="value">
+      <div class="vcard reveal">
+        <img src="assets/images/section-three-illustration.svg" alt="">
+        <div><h3>What the player gets</h3>
+          <ul><li>A clear picture of their own health and how it changes</li><li>Personal fuelling and recovery advice that fits the matchweek</li><li>More energy for training and matches</li><li>Ownership of their own health data</li></ul>
+        </div>
+      </div>
+      <div class="vcard reveal">
+        <img src="assets/images/section-two-illustration.svg" alt="">
+        <div><h3>What the club gets</h3>
+          <ul><li>Fewer days lost to illness and a more available squad</li><li>Interventions you can follow through to a measured response</li><li>A longitudinal view that supports staff decisions</li><li>A strong health culture that helps attract and keep players</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">Science &amp; data</div>
+      <h2>Built with researchers. <em>Secured</em> for health data.</h2>
+    </div>
+    <div class="trust">
+      <div class="tcard reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EBAC00" stroke-width="2"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-6-10V3"/></svg></div><h3>Developed with specialists</h3><p>Ydun is developed together with leading researchers in public health, nutrition, sport science, motivation and psychology from the University of Copenhagen and Aarhus University.</p></div>
+      <div class="tcard reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EBAC00" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>BioTell™ platform</h3><p>All measurements are stored on BioTell™, our secure health data platform developed with KMD. It turns raw values into clear wellness scores that are easy to follow from one test to the next.</p></div>
+      <div class="tcard reveal"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EBAC00" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>GDPR &amp; EU servers</h3><p>Servers are located in the EU and comply with GDPR and health-record requirements. Players log in with MitID, and personal health data stays personal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions we often get</h2>
+    </div>
+    <div class="faq-tabs"><div class="seg" id="faqTabs"><button class="on" data-f="club">For clubs</button><button data-f="player">For players</button></div></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Let's build your squad's baseline</h2>
+    <p class="lead" style="margin:0 auto">Tell us about your club, your staff and your season — we'll show you how Ydun fits around your training week.</p>
+    <div class="links">
+      <a class="btn btn-gold" href="mailto:info@ydun.com">info@ydun.com</a>
+      <a class="btn btn-ghost" href="tel:+4570605890">+45 70 60 58 90</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><img src="assets/images/logo.svg" alt="Ydun"><span>Measure → Understand → Intervene → Measure response → Learn → Personalise</span></div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
